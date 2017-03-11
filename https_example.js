@@ -10,7 +10,10 @@ var options = {
 // called by https when the request is made.
 var callback = function(response) {
   console.log('In response handler callback!');
-  console.log('In response:', response);
+  response.on('data', function(chunk){
+    console.log('[-- CHUNK OF LENGTH' + chunck.length + '--]');
+    console.log(chuck.toString());
+  });
 }
 
 console.log("I'm about to make the request!");
